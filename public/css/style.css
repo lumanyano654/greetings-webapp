@@ -1,0 +1,30 @@
+body{
+  background-color:lightgrey;
+
+}
+
+.container {
+
+  float: inherit;
+  display: grid;
+  padding-bottom: 2em;
+  padding-top: 2em ;
+  margin: auto;
+  width: 50%;
+}
+
+
+.button{
+
+  float: initial;
+  padding: 1em;
+}
+.textBox{
+  padding: 1em;
+}
+.counter{
+
+  font: bold;
+
+}
+
