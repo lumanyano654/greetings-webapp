@@ -19,9 +19,10 @@ var app = express()
 
 const greetingsRoutes = require("./routes")  
     var greetings = require("./greetings")
-    const greet = greetings(pool)
+    const greet = grsessioneetings(pool)
 
 const GreetRoutes = greetingsRoutes(greet)
+
 
 
 app.use(session({
