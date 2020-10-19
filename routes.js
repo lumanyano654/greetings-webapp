@@ -4,7 +4,10 @@ module.exports = function greetRoutes(greet) {
     // const greet = greetings(gr
 
     async function home(req, res) {
-        res.render("index")
+        var count = await greet.counter()
+            res.render("index",{
+                counter: count
+            })
     }
 
     async function greetingHome(req, res) {
@@ -28,7 +31,6 @@ module.exports = function greetRoutes(greet) {
 
             else if (personsName && lang) {
                 var display = await greet.correctInputs(personsName, lang)
-                var count = await greet.counter()
             }
 
             var checkName = await greet.checkNames(personsName)
@@ -39,6 +41,7 @@ module.exports = function greetRoutes(greet) {
             else {
                 await greet.updateNames(personsName)
             }
+            var count = await greet.counter()
 
             res.render("index", {
                 message: display,
