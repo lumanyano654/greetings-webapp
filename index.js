@@ -13,7 +13,7 @@ const pool = new Pool({
     connectionString
 });
 
-var assert = require("assert")
+// var assert = require("assert")
 
 var app = express()
 
@@ -24,11 +24,11 @@ const greetingsRoutes = require("./routes")
 const GreetRoutes = greetingsRoutes(greet)
 
 
-app.use(session({
-    secret: "<add a secret string here>",
-    resave: false,
-    saveUninitialized: true
-}));
+// app.use(session({
+//     secret: "<add a secret string here>",
+//     resave: false,
+//     saveUninitialized: true
+// }));
 
 app.use(flash());
 
