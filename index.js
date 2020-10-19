@@ -19,7 +19,7 @@ var app = express()
 
 const greetingsRoutes = require("./routes")  
     var greetings = require("./greetings")
-    const greet = grsessioneetings(pool)
+    const greet = greetings(pool)
 
 const GreetRoutes = greetingsRoutes(greet)
 
