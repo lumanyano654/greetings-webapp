@@ -40,6 +40,7 @@ app.set('view engine', 'handlebars');
 app.use(express.static("public"))
 
 app.get("/",GreetRoutes.home)
+
 app.post("/", GreetRoutes.greetingHome )
 
 app.get("/greeted", GreetRoutes.greeted)
