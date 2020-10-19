@@ -1,10 +1,11 @@
 body{
-  background-color:lightgrey;
+  background-color:lightgrey;  
+  background-image: url("greetings.jpg");
 
 }
+
 .container {
-  /* padding-bottom: 2em;
-  padding-top: 2em ; */
+  background-image: url("greetings.jpg");
   background-color: gray;
   margin: auto;
   width: 50%;
@@ -13,7 +14,13 @@ form {
   padding: 10px;
 }
 
+h3{ 
+  color: yellow;
+}
 
+h4{
+  color: chartreuse;
+}
 .textBox{ 
   padding-bottom: 1em;
 }
