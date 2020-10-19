@@ -18,7 +18,10 @@ var assert = require("assert")
 var app = express()
 
 const greetingsRoutes = require("./routes")  
-const GreetRoutes = greetingsRoutes(pool)
+    var greetings = require("./greetings")
+    const greet = greetings(pool)
+
+const GreetRoutes = greetingsRoutes(greet)
 
 
 app.use(session({

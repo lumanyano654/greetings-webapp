@@ -1,81 +1,98 @@
-module.exports = function greetRoutes(pool) {
+module.exports = function greetRoutes(greet) {
 
-    var greetings = require("./greetings")
-    const greet = greetings(pool)
+    // var greetings = require("./greetings")
+    // const greet = greetings(gr
 
     async function home(req, res) {
         res.render("index")
     }
 
     async function greetingHome(req, res) {
-        const personsName = req.body.name
+        try {
+            const personsName = req.body.name
 
-        const lang = req.body.language
+            const lang = req.body.language
 
-        if (!personsName) {
+            if (!personsName) {
 
-            req.flash('info', "Please enter name")
-            res.render('index')
-            return;
+                req.flash('info', "Please enter name")
+                res.render('index')
+                return;
+            }
+            else if (!lang) {
+
+                req.flash('info', "Please select language")
+                res.render('index')
+                return;
+            }
+
+            else if (personsName && lang) {
+                var display = await greet.correctInputs(personsName, lang)
+                var count = await greet.counter()
+            }
+
+            var checkName = await greet.checkNames(personsName)
+
+            if (checkName === 0) {
+                await greet.insertName(personsName)
+            }
+            else {
+                await greet.updateNames(personsName)
+            }
+
+            res.render("index", {
+                message: display,
+                counter: count,
+            })
+        } catch (error) {
+            console.log(error);
+
         }
-        else if (!lang) {
-
-            req.flash('info', "Please select language")
-            res.render('index')
-            return;
-        }
-
-        else if (personsName && lang) {
-            var display = await greet.correctInputs(personsName, lang)
-            var count = await greet.counter()
-        }
-
-        var checkName = await greet.checkNames(personsName)
-
-        if (checkName === 0) {
-            await greet.insertName(personsName)
-        }
-        else {
-            await greet.updateNames(personsName)
-        }
-
-
-        res.render("index", {
-            message: display,
-            counter: count,
-        })
     }
 
 
     async function greeted(req, res) {
+        try {
+            var myList = await greet.getName()
+            res.render("greeted", {
+                listOfNames: myList
+            })
 
-        var myList = await greet.getName()
+        } catch (error) {
+            console.log(error);
 
-
-        res.render("greeted", {
-            listOfNames: myList
-        })
+        }
     }
 
 
     async function counter(req, res) {
 
-        const name = req.params.name
-        const theCount = await greet.personCounter(name)
+        try {
+            const name = req.params.name
+            const theCount = await greet.personCounter(name)
 
 
 
-        res.render("counter", {
-            count: theCount,
-            name
+            res.render("counter", {
+                count: theCount,
+                name
 
-        })
+            })
+        } catch (error) {
+            console.log(error);
+
+        }
     }
 
     async function reset(req, res) {
-        await greet.deleteRs()
-        res.redirect("/")
+        try {
+            await greet.deleteRs()
+            res.redirect("/")
 
+        } catch (error) {
+            console.log(error);
+
+        }
     }
 
     async function back(req, res) {
