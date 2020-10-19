@@ -3,7 +3,6 @@ var exphbs = require("express-handlebars")
 var bodyParser = require("body-parser")
 const flash = require('express-flash');
 const session = require('express-session');
-var greetings = require("./greetings")
 
 const pg = require("pg");
 const Pool = pg.Pool;
@@ -18,8 +17,8 @@ var assert = require("assert")
 
 var app = express()
 
-
-const greet = greetings(pool)
+const greetingsRoutes = require("./routes")  
+const GreetRoutes = greetingsRoutes(pool)
 
 
 app.use(session({
@@ -40,90 +39,16 @@ app.set('view engine', 'handlebars');
 
 app.use(express.static("public"))
 
-app.get("/", async function (req, res) {
+app.get("/",GreetRoutes.home)
+app.post("/", GreetRoutes.greetingHome )
 
+app.get("/greeted", GreetRoutes.greeted)
 
-    res.render("index", {
+app.get("/counter/:name", GreetRoutes.counter )
 
+app.get("/reset", GreetRoutes.reset)
 
-    })
-})
-app.post("/", async function (req, res) {
-    const personsName = req.body.name
-
-    const lang = req.body.language
-
-    var display = await greet.correctInputs(personsName, lang)
-    var count = await greet.counter()
-
-    var checkName = await greet.checkNames(personsName)
-
-    if (checkName === 0) {
-        greet.insertName(personsName)
-    }
-    else {
-        greet.updateNames(personsName)
-    }
-
-    if (!personsName) {
-
-        req.flash('info', "Please enter name")
-        res.render('index')
-        return;
-    }
-    else if (!lang) {
-
-        req.flash('info', "Please select language")
-        res.render('index')
-        return;
-    }
-
-
-    else {
-        res.render("index", {
-            message: display,
-            counter: count,
-
-        })
-
-    }
-})
-
-app.get("/greeted", async function (req, res) {
-
-    var myList = await greet.getName()
-
-
-    res.render("greeted", {
-        listOfNames: myList
-    })
-})
-
-app.get("/counter/:name", async function (req, res) {
-
-    const name = req.params.name  
-    const theCount = await greet.personCounter(name)
-
-
-
-    res.render("counter", {
-        count: theCount,
-        name
-
-    })
-})
-
-app.get("/reset", async function (req, res) {
-    await greet.deleteRs()
-    res.redirect("/")
-
-})
-
-app.get("/back", async function (req, res) {
-    
-    res.redirect("/")
-
-})
+app.get("/back", GreetRoutes.back)
 
 
 let PORT = process.env.PORT || 3006;

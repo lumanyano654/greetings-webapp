@@ -2,24 +2,27 @@ body{
   background-color:lightgrey;
 
 }
-
 .container {
-
-  float: inherit;
-  display: grid;
-  padding-bottom: 2em;
-  padding-top: 2em ;
+  /* padding-bottom: 2em;
+  padding-top: 2em ; */
+  background-color: gray;
   margin: auto;
   width: 50%;
 }
+form {
+  padding: 10px;
+}
 
 
-.button{
+.textBox{ 
+  padding-bottom: 1em;
+}
+.radio {
+  padding-bottom: 1em;
+}
+/* .button{
 
   float: initial;
-  padding: 1em;
-}
-.textBox{
   padding: 1em;
 }
 .counter{
@@ -27,4 +30,8 @@ body{
   font: bold;
 
 }
+
+.entry h4{
+  color: crimson;
+} */
 
