@@ -27,18 +27,46 @@ h4{
 .radio {
   padding-bottom: 1em;
 }
-/* .button{
-
-  float: initial;
-  padding: 1em;
+.greetedBTN{
+position: relative;
+  width: 100px;
+  height: 23px;
+  border-radius: 4px;
+  background-color: lightgray;
+  cursor: pointer;
+  color: #393939;
+  font-weight: 500;
+  border: 1px solid black;
+  text-align: center;
 }
-.counter{
-
-  font: bold;
-
+.greetedBTN:hover{
+  background-color: #3dcfd3;
+  color: white;
+  transition: all ease .3s;
+}
+.greetedBTN a{
+  text-decoration: none;
+  color: #292929;
+}
+.backBtn a{
+  text-decoration: none;
+  color: black;
 }
 
-.entry h4{
-  color: crimson;
-} */
+
+.greetedNames a{
+  text-decoration: none;
+  color: bisque;
+}
+
+.message {
+  color: bisque;
+  padding-top: 20px;
+}
+
+.resetbutton a{
+  text-decoration: none;
+  color: black;
+}
+
 

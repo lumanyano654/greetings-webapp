@@ -24,7 +24,6 @@ const greetingsRoutes = require("./routes")
 const GreetRoutes = greetingsRoutes(greet)
 
 
-
 app.use(session({
     secret: "<add a secret string here>",
     resave: false,
