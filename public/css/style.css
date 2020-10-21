@@ -15,11 +15,11 @@ form {
 }
 
 h3{ 
-  color: yellow;
+  color: bisque;
 }
 
-h4{
-  color:yellow;
+h2{
+  color:bisque;
 }
 .textBox{ 
   padding-bottom: 1em;
@@ -57,11 +57,13 @@ position: relative;
 .greetedNames a{
   text-decoration: none;
   color: bisque;
+  
 }
 
 .message {
   color: bisque;
   padding-top: 20px;
+  text-align: center;
 }
 
 .resetbutton a{

@@ -61,6 +61,38 @@ describe('The greetings web-app', async function () {
         assert.equal(1, count);
     })
 
+    it("should be able to show the name when after inserted", async function (){
+        await greet.insertName("lolo")
+
+        const showName = await greet.getName()
+
+        assert.deepEqual([{name_greeted:"Lolo"}],showName)
+    })
+    
+    it("should update name when the name is inserted", async function (){
+        await greet.insertName('lolo')
+        // await greet.insertName('lolo')
+        // await greet.insertName('lolo')
+
+
+     await greet.updateNames("lolo")
+     await greet.updateNames("lolo")
+
+        assert.equal(3,await greet.personCounter('lolo'))
+    })
+
+    it("should be able delete the names when its reseted", async function(){
+        await greet.insertName("lolo")
+        await greet.insertName("lolo")
+
+
+        await greet.deleteRs()
+
+        assert.deepEqual([], await greet.getName())
+    })
+
+    
+
 
 
 after(function () {
