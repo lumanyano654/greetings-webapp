@@ -28,7 +28,7 @@ h2{
   padding-bottom: 1em;
 }
 .greetedBTN{
-position: relative;
+  position: relative;
   width: 100px;
   height: 23px;
   border-radius: 4px;
@@ -38,15 +38,18 @@ position: relative;
   font-weight: 500;
   border: 1px solid black;
   text-align: center;
+  margin-left: 15em;
 }
 .greetedBTN:hover{
   background-color: #3dcfd3;
   color: white;
   transition: all ease .3s;
+
 }
 .greetedBTN a{
   text-decoration: none;
   color: #292929;
+  
 }
 .backBtn a{
   text-decoration: none;
@@ -57,7 +60,8 @@ position: relative;
 .greetedNames a{
   text-decoration: none;
   color: bisque;
-  
+  list-style-type:none ;
+  text-align: center;
 }
 
 .message {
@@ -70,5 +74,14 @@ position: relative;
   text-decoration: none;
   color: black;
 }
+
+.container2{
+  text-align: center;
+}
+
+h1{
+  color: aliceblue;
+}
+
 
 

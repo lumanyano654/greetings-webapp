@@ -71,9 +71,6 @@ describe('The greetings web-app', async function () {
     
     it("should update name when the name is inserted", async function (){
         await greet.insertName('lolo')
-        // await greet.insertName('lolo')
-        // await greet.insertName('lolo')
-
 
      await greet.updateNames("lolo")
      await greet.updateNames("lolo")
