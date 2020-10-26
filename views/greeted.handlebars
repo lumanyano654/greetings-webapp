@@ -1,17 +1,20 @@
-<div class="backBtn">
-  <button type="submit"> <a href="/back"> BACK</a></button>
-</div>
+
 
 <div class="greetedNames">
   <ul>
     {{#each listOfNames}}
 
     <a href="/counter/{{this.name_greeted}}">
-      <li><h4>{{this.name_greeted}}</h4></li>
+      <li><h1>{{this.name_greeted}}</h1></li>
 
     </a>
 
     {{/each}}
   </ul>
+
+
+<div class="backBtn">
+  <button type="submit"> <a href="/back"> BACK</a></button>
+</div>
 
 </div>

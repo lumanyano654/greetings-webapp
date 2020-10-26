@@ -15,11 +15,11 @@ form {
 }
 
 h3{ 
-  color: bisque;
+  color: white;
 }
 
 h2{
-  color:bisque;
+  color: white;
 }
 .textBox{ 
   padding-bottom: 1em;
@@ -38,7 +38,7 @@ h2{
   font-weight: 500;
   border: 1px solid black;
   text-align: center;
-  margin-left: 18em;
+  margin-left: 20em;
 }
 .greetedBTN:hover{
   background-color: #3dcfd3;
@@ -56,16 +56,22 @@ h2{
   color: black;
 }
 
+.backBtn {
+  text-align: center;
+  margin-top: 15em;
+
+}
+
 
 .greetedNames a{
   text-decoration: none;
-  color: bisque;
+  color: darkred;
   list-style-type:none ;
   text-align: center;
 }
 
 .message {
-  color: bisque;
+  color: white;
   padding-top: 20px;
   text-align: center;
 }
@@ -86,6 +92,7 @@ h1{
 .entry{
   color: red;
 }
+
 
 
 
