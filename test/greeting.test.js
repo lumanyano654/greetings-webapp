@@ -88,6 +88,13 @@ describe('The greetings web-app', async function () {
         assert.deepEqual([], await greet.getName())
     })
 
+    it("should be able to show error message when name and language is not entered", function(){
+
+            
+             assert.equal(undefined,greet.correctInputs("", ""))
+
+
+    })
     
 
 

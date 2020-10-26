@@ -1,9 +1,9 @@
 module.exports = function greetings(pool) {
 
 
-     function correctInputs(name, language) {
+    function correctInputs(name, language) {
         name = name.toUpperCase().charAt(0) + name.slice(1);
-        
+
         if (language) {
             if (language === "Xhosa") {
 
@@ -24,7 +24,9 @@ module.exports = function greetings(pool) {
                 return "Halo, " + name
             }
 
+
         }
+
 
     }
 
@@ -38,7 +40,7 @@ module.exports = function greetings(pool) {
         name = name.toUpperCase().charAt(0) + name.slice(1)
         const eachCount = await pool.query('select name_counter from greeting where name_greeted = $1', [name])
         return eachCount.rows[0].name_counter;
-   
+
     }
 
     async function checkNames(name) {
@@ -58,13 +60,13 @@ module.exports = function greetings(pool) {
         return counter.rowCount
     }
 
-    
+
     async function getName() {
-        const namest = await pool.query("select name_greeted from greeting",)
+        const namest = await pool.query("select name_greeted from greeting")
         return namest.rows
     }
 
-    async function deleteRs(){
+    async function deleteRs() {
         await pool.query("delete from greeting")
     }
 
@@ -73,7 +75,6 @@ module.exports = function greetings(pool) {
         return namesList
     }
 
-    
 
 
 
@@ -87,7 +88,8 @@ module.exports = function greetings(pool) {
         updateNames,
         counter,
         getName,
-        deleteRs
+        deleteRs,
+       
 
 
     }

@@ -17,14 +17,14 @@ module.exports = function greetRoutes(greet) {
             const lang = req.body.language
 
             if (!personsName) {
-
-                req.flash('info', "Please enter name")
+                
+                req.flash('info', "PLEASE ENTER NAME")
                 res.render('index')
                 return;
             }
             else if (!lang) {
 
-                req.flash('info', "Please select language")
+                req.flash('info', "PLEASE SELECT LANGUAGE")
                 res.render('index')
                 return;
             }
