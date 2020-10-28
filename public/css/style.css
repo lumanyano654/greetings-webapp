@@ -1,11 +1,11 @@
 body{
   background-color:lightgrey;  
-  background-image: url("greetings.jpg");
+  background-image: url("dark.jpg");
 
 }
 
 .container {
-  background-image: url("greetings.jpg");
+  background-image: url("dark.jpg");
   background-color: gray;
   margin: auto;
   width: 50%;
@@ -38,7 +38,7 @@ h2{
   font-weight: 500;
   border: 1px solid black;
   text-align: center;
-  margin-left: 20em;
+  margin-left: 19em;
 }
 .greetedBTN:hover{
   background-color: #3dcfd3;
@@ -81,7 +81,7 @@ h2{
   color: black;
 }
 
-.container2{
+.container{
   text-align: center;
 }
 
@@ -91,6 +91,10 @@ h1{
 
 .entry{
   color: red;
+}
+.radio {
+  font-size: 25px;
+  color: antiquewhite;
 }
 
 

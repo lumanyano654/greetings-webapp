@@ -1,8 +1,5 @@
 module.exports = function greetRoutes(greet) {
 
-    // var greetings = require("./greetings")
-    // const greet = greetings(gr
-
     async function home(req, res) {
         var count = await greet.counter()
             res.render("index",{
@@ -17,15 +14,19 @@ module.exports = function greetRoutes(greet) {
             const lang = req.body.language
 
             if (!personsName) {
-                
+                var count = await greet.counter()
                 req.flash('info', "PLEASE ENTER NAME")
-                res.render('index')
+                res.render('index',{
+                    counter: count
+                })
                 return;
             }
             else if (!lang) {
-
+                var count = await greet.counter()
                 req.flash('info', "PLEASE SELECT LANGUAGE")
-                res.render('index')
+                res.render('index',{
+                    counter: count
+                })
                 return;
             }
 
